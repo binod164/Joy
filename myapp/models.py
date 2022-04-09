@@ -18,6 +18,8 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(64), unique=True, index=True)
     username = db.Column(db.String(64), unique=True, index=True)
     password_hash = db.Column(db.String(128))
+    events = db.relationship('Event', backref='organizer', lazy=True)
+
 
     def __init__(self, email, username, password):
         self.email = email
@@ -31,3 +33,25 @@ class User(db.Model, UserMixin):
     def __repr__(self):
         return f"Username {self.username}"
 
+class Event(db.Model):
+    __tablename__ = 'event_lists'
+    id = db.Column(db.Integer, primary_key=True)
+    date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    image = db.Column(db.String(300), nullable=False)
+    title = db.Column(db.String(140), nullable=False)
+    text = db.Column(db.Text, nullable=False)
+    attending = db.Column(db.Boolean, nullable=False, default=False)
+    favorite = db.Column(db.Boolean, nullable=False, default=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+
+
+    def __init__(self, title, text, user_id, image, attending, favorite):
+        self.title = title
+        self.text = text
+        self.user_id = user_id
+        self.image = image
+        self.attending = attending
+        self.favorite = favorite
+    
+    def __repr__(self):
+        return f"Event ID: {self.id} -- Date: {self.date} --- Title: {self.Title}"
