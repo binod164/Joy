@@ -18,3 +18,9 @@ def create_post():
         print('Event post was created')
         return redirect(url_for('core.index'))
     return render_template('create_post.html', form=form)
+
+
+@event_lists.route('/<int:event_list_id>')
+def event_list(event_list_id):
+    event_list = Event.query.get_or_404(event_list_id) 
+    return render_template('event_list.html', title=event_list.title, date=event_list.date, list=event_list)    
