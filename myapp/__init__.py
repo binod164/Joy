@@ -52,7 +52,7 @@ app.register_blueprint(error_pages)
 from myapp.users.views import users
 app.register_blueprint(users)
 
-# Linking and registering event_lists views Blueprint
-from myapp.event_lists.views import event_lists
-app.register_blueprint(event_lists)
+# Linking and registering event_posts views Blueprint
+from myapp.event_posts.views import event_posts
+app.register_blueprint(event_posts)
 
