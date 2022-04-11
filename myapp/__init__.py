@@ -55,3 +55,4 @@ app.register_blueprint(users)
 # Linking and registering event_lists views Blueprint
 from myapp.event_lists.views import event_lists
 app.register_blueprint(event_lists)
+
