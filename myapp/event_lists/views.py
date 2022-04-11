@@ -24,3 +24,26 @@ def create_post():
 def event_list(event_list_id):
     event_list = Event.query.get_or_404(event_list_id) 
     return render_template('event_list.html', title=event_list.title, date=event_list.date, list=event_list)    
+
+@event_lists.route('/<int:event_list_id>/update',methods=['GET','POST'])
+@login_required
+def update(event_list_id):
+    event_list = EventForm.query.get_or_404(event_list_id)
+
+    if event_list.author != current_user:
+        abort(403)
+
+    form = EventForm()
+
+    if form.validate_on_submit():
+        event_list.title = form.title.data
+        event_list.text = form.text.data
+        db.session.commit()
+        flash('Event Post Updated')
+        return redirect(url_for('event_lists.event_list',event_list_id=event_list.id))
+
+    elif request.method == 'GET':
+        form.title.data = event_list.title
+        form.text.data = event_list.text
+
+    return render_template('create_post.html',title='Updating',form=form)    
