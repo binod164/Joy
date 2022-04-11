@@ -19,6 +19,9 @@
 
         {% if current_user.is_authenticated %}
         <li class="nav-link">
+            <a href="{{url_for('event_lists.create_post')}}">Create Event</a> 
+        </li>        
+        <li class="nav-link">
             <a href="{{url_for('users.logout')}}">Log Out</a>
         </li>
         <li class="nav-link">
