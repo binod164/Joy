@@ -47,3 +47,17 @@ def update(event_list_id):
         form.text.data = event_list.text
 
     return render_template('create_post.html',title='Updating',form=form)    
+
+
+@event_lists.route('/<int:event_list_id>/delete',methods=['GET','POST'])
+@login_required
+def delete_post(event_list_id):
+
+    blog_post = Event.query.get_or_404(event_list_id)
+    if blog_post.author != current_user:
+        abort(403)
+
+    db.session.delete(event_list)
+    db.session.commit()
+    flash('Event Post Deleted')
+    return redirect(url_for('core.index'))
