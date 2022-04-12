@@ -9,6 +9,7 @@
      {% for post in event_posts.items %}
     <h2>
         <a href="{{url_for('event_posts.event_post', event_post_id=post.id)}}">{{post.title}}</a>
+        <img src="{{post.image_url}}" alt ="eventpic" >
     </h2>
     Written By: <a href="{{url_for('users.user_posts', username=post.organizer.username)}}">{{post.organizer.username}}</a>
 

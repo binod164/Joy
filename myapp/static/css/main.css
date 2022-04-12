@@ -76,6 +76,10 @@ h1{
   font-size: 5rem;
 }
 
+.info>h4{
+  font-family: cursive;
+}
+
 .info> h5{
   margin-top: 3%;
 }
