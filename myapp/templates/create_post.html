@@ -1,12 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
+  <div class="createevent"
     <div class="container">
       <form class="form-group" method="POST">
           {{form.hidden_tag()}}
-
+          <h1>Create an event</h1>
           <div class="form-group">
               {{form.title.label(class="form-control-label")}}
               {{form.title(class="form-control form-control-lg")}}
+          </div>
+          <div class="form-group">
+            {{form.image_url.label(class="form-control-label")}}
+            {{form.image_url(class="form-control form-control-lg")}}
           </div>
           <div class="form-group">
             {{form.text.label(class="form-control-label")}}
@@ -25,4 +30,5 @@
           </div>
       </form>
     </div>
+  </div>  
 {% endblock %}

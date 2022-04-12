@@ -76,5 +76,5 @@ def account():
 def user_posts(username):
     page = request.args.get('page', 1, type=int)
     user = User.query.filter_by(username=username).first_or_404()
-    event_posts = Event.query.filter_by(organizer=user).order_by(Event.date.desc()).paginate(page=page, per_page=9) 
+    event_posts = Event.query.filter_by(organizer=user).order_by(Event.date.desc()).paginate(page=page, per_page=6) 
     return render_template('user_event_posts.html', event_posts=event_posts, user=user)
