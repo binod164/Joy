@@ -1,4 +1,15 @@
-body{
-
+form{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 15%;
 }
 
+.card{
+  margin: 1%;
+}
+
+h1{
+  text-align: center;
+  margin-top: 2%;
+}
