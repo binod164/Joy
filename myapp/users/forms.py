@@ -14,16 +14,16 @@ from flask_login import current_user
 from myapp.models import User 
 
 class LoginForm(FlaskForm):
-    email = StringField('Email', validators=[DataRequired(), Email()])
-    password = PasswordField('Password', validators=[DataRequired()])
+    email = StringField('Email', validators=[DataRequired(), Email()],render_kw={"placeholder": "Email"} )
+    password = PasswordField('Password', validators=[DataRequired()],render_kw={"placeholder": "Password"})
     submit = SubmitField('Log In')
 
 class RegistrationForm(FlaskForm):
-    email = StringField('Email', validators=[DataRequired(), Email()])
-    username = StringField('Username', validators=[DataRequired()])
-    password = PasswordField('Password', validators=[DataRequired(), EqualTo('pass_confirm', message='Passwords must match!')])
+    email = StringField('Email', validators=[DataRequired(), Email()], render_kw={"placeholder": "Email"})
+    username = StringField('Username', validators=[DataRequired()], render_kw={"placeholder": "Username"})
+    password = PasswordField('Password', validators=[DataRequired(), EqualTo('pass_confirm', message='Passwords must match!')], render_kw={"placeholder": "Password"})
     # we make sure password is equal to pass confirm - so 
-    pass_confirm = PasswordField('Confirm Password', validators=[DataRequired()])
+    pass_confirm = PasswordField('Confirm Password', validators=[DataRequired()], render_kw={"placeholder": "Confirm Password"})
     submit = SubmitField('Register')
     
     #when someone is registering - if the email exists then we want to raise a validation error
