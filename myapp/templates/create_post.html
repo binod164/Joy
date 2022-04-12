@@ -13,6 +13,14 @@
             {{form.text(class="form-control form-control-lg")}}
           </div>
           <div class="form-group">
+            {{form.location.label(class="form-control-label")}}
+            {{form.location(class="form-control form-control-lg")}}
+          </div>
+          <div class="form-group">
+            {{form.eventdate.label(class="form-control-label")}}
+            {{form.eventdate(class="form-control form-control-lg", type="date")}}
+          </div>
+          <div class="form-group">
             {{form.submit(class="btn btn-outline-info")}}
           </div>
       </form>

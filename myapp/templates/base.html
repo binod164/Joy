@@ -13,28 +13,28 @@
 <body>
     <ul class="nav">
         <li class="nav-link">
-            <a href="{{url_for('core.info')}}">About</a>
-        </li>
-        <li class="nav-link">
-            <a href="{{url_for('core.index')}}">Events</a>
+            <a class="nav-item" href="{{url_for('core.index')}}">Events</a>
         </li>
         {% if current_user.is_authenticated %}
         <li class="nav-link">
-            <a href="{{url_for('event_posts.create_post')}}">Create Event</a> 
+            <a class="nav-item" href="{{url_for('event_posts.create_post')}}">Create Event</a> 
         </li>        
         <li class="nav-link">
-            <a href="{{url_for('users.logout')}}">Log Out</a>
+            <a class="nav-item" href="{{url_for('users.logout')}}">Log Out</a>
         </li>
         <li class="nav-link">
-            <a href="{{url_for('users.account')}}">Account</a>
+            <a class="nav-item" href="{{url_for('users.account')}}">Account</a>
         </li>
         {% else %}
         <li class="nav-link">
+            <a class="nav-item" href="{{url_for('core.info')}}">About</a>
+        </li>
+        <!-- <li class="nav-link">
             <a href="{{url_for('users.login')}}">Log In</a>
         </li>
         <li class="nav-link">
             <a href="{{url_for('users.register')}}">Register</a>
-        </li>
+        </li> -->
         {% endif %}
     </ul>
 

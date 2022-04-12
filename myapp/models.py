@@ -40,7 +40,7 @@ class Event(db.Model):
     title = db.Column(db.String(140), nullable=False)
     text = db.Column(db.Text, nullable=False)
     location = db.Column(db.Text, nullable=False)
-    eventdate = db.Column(db.DateTime, nullable=False)
+    eventdate = db.Column(db.String, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
 
 

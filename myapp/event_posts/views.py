@@ -11,7 +11,7 @@ event_posts = Blueprint('event_posts', __name__)
 def create_post():
     form = EventForm()
     if form.validate_on_submit():
-        event_post = Event(title=form.title.data, text=form.text.data, user_id=current_user.id)
+        event_post = Event(title=form.title.data, text=form.text.data, location=form.location.data, eventdate=form.eventdate.data, user_id=current_user.id)
         db.session.add(event_post)
         db.session.commit()
         flash('Event Post Created')
@@ -38,10 +38,9 @@ def update(event_post_id):
     if form.validate_on_submit():
         event_post.title = form.title.data
         event_post.text = form.text.data
-        # event_list.image=form.image.data
-        # event_list.attending=form.attending.data
-        # event_list.favorite=form.favorite.data
-
+        event_post.location = form.location.data
+        event_post.eventdate = form.eventdate.data
+        
         db.session.commit()
         flash('Event Post Updated')
         return redirect(url_for('event_posts.event_post',event_post_id=event_post.id))
@@ -49,9 +48,8 @@ def update(event_post_id):
     elif request.method == 'GET':
         form.title.data = event_post.title
         form.text.data = event_post.text
-        # form.image.data = event_list.image
-        # form.attending.data = event_list.attending
-        # form.favorite.data = event_list.favorite
+        form.location.data = event_post.location
+        form.eventdate.data = event_post.eventdate
 
 
     return render_template('create_post.html',title='Updating',form=form)    
