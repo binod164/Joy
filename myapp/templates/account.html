@@ -1,31 +1,46 @@
 {% extends "base.html" %}
 {% block content %}
-   
-<div class="jumbotron">
-    <div align="center">
-        <h1>Welcome to the page for {{current_user.username}}</h1>
+    <div class="jumbotron">
+        <h2 class="event">My Events</h2>
     </div>
-</div>
+    <div class="container">
+        <div class="card-group">
+            <div class="row row-cols-1 row-cols-md-3">
+        {% for post in event_posts.items %}
+            {% if current_user.id == post.user_id %}
+                <div class="card" style="width: 25rem;">
+                    <img class="card-img-top" src="{{post.image_url}}" onerror="this.onerror=null; this.src='../static/images/charity.jpeg' "alt="Card image cap">
+                    <div class="card-body">
+                        <h2 class = "eventname">
+                            <a class="card-title" href="{{url_for('event_posts.event_post', event_post_id=post.id)}}">{{post.title}}</a>
+                        </h2>
+                        <p class="card-title">Location: {{post.location}}</p>
+                    </div>
+                    <div class = "rsvp">
+                        <button>RSVP</button><br>
+                        <button>Interested</button><br>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        </div>
+    </div>
 
-<div class="container">
-    <form method="POST" action="" enctype="multipart/form-data">
-        <div class="form-group">
-            {{form.hidden_tag()}}
-        </div>
-        <div class="form-group">
-            {{form.username.label(class='form-group')}} 
-            {{form.username(class='form-control')}}
-        </div>
-        <div class="form-group">
-            {{form.email.label(class='form-group')}} 
-            {{form.email(class='form-control')}}
-        </div>
-      
-        <div class="form-group">
-            {{form.submit(class='btn btn-primary')}}
-        </div>
-       
-       
-    </form>
-</div>
-{% endblock %}
+    <nav aria-label="Page Navigation example">
+        <ul class="pagination justify-content-center">
+            {% for page_num in event_posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+                {% if event_posts.page == page_num %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="{{url_for('core.index', page=page_num)}}">{{ page_num }}</a>
+                </li>
+                {% else %}
+                <li class="page-item">
+                    <a class="page-link" href="{{url_for('core.index', page=page_num)}}">{{ page_num }}</a>
+                </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </nav>
+{% endblock %}a
+

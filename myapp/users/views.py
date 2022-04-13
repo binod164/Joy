@@ -6,10 +6,12 @@ from myapp import db
 from myapp.models import User
 from myapp.users.forms import RegistrationForm, LoginForm, UpdateUserForm
 from myapp.models import User, Event
+from myapp.event_posts.forms import EventForm
 
 
 users = Blueprint('users', __name__) # dont forget to register this in __init__.py 
 
+event_posts = Blueprint('event_posts', __name__)
 
 # register
 @users.route('/register', methods=['GET', 'POST'])
@@ -48,29 +50,18 @@ def login():
 
     return render_template('login.html',form=form)
 
-# logout
 @users.route('/logout')
 def logout():
     logout_user()
-    return redirect(url_for('core.index')) #once the user has logged out we will redirect them back home
+    return redirect(url_for('core.index')) 
 
-
-#account (update UserForm)
-@users.route('/account', methods=['GET', 'POST'])
+@users.route('/account')
 @login_required
 def account():
-    form = UpdateUserForm()
-    if form.validate_on_submit(): 
-        current_user.username = form.username.data
-        current_user.email = form.email.data
-        db.session.commit()
-        flash('User account updated!!')
-        return redirect(url_for('users.account'))
-    elif request.method == 'GET':
-        form.username.data = current_user.username
-        form.email.data = current_user.email
-
-    return render_template('account.html', form=form)
+    page = request.args.get('page', 1, type=int)
+    user = User.query.filter_by(id =current_user.id).first_or_404()
+    event_posts = Event.query.filter_by(organizer=user).order_by(Event.date.desc()).paginate(page=page, per_page=6) 
+    return render_template('account.html', event_posts=event_posts, user=user)
 
 @users.route('/<username>')
 def user_posts(username):
@@ -78,3 +69,8 @@ def user_posts(username):
     user = User.query.filter_by(username=username).first_or_404()
     event_posts = Event.query.filter_by(organizer=user).order_by(Event.date.desc()).paginate(page=page, per_page=6) 
     return render_template('user_event_posts.html', event_posts=event_posts, user=user)
+
+@event_posts.route('/<int:event_post_id>')
+def event_post(event_post_id):
+    event_post = Event.query.get_or_404(event_post_id) 
+    return render_template('user_event_posts.html', title=event_post.title, date=event_post.date, post=event_post)    
