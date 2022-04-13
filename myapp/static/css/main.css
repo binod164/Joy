@@ -23,12 +23,24 @@ form *{
   border-radius: 10px;
 }
 
+#submit{
+  background-color: #0dcaf0;
+}
+
 .card{
   margin: 1%;
   padding-left: 0;
   padding-right: 0;
-  border-radius: 6px;
-  border-color: black;
+  border-radius: 5px;
+  border-width: 2px;
+  border-color: rgb(109, 192, 224); 
+  text-align: center;
+}
+
+.card-body{
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
 }
 
 h1{
@@ -36,11 +48,18 @@ h1{
   margin-top: 2%;
 }
 
+h2{
+  color: white;
+  text-align: center;
+  margin-top: 1%;
+}
+
 .nav{
   display: flex;
   justify-content: space-evenly;
-  background-color: black;  
+  background-color: rgb(109, 192, 224);  
   padding: 10px;
+  font-size: 1.25rem;
 }
 
 .nav-item{
@@ -110,11 +129,45 @@ h1{
 }
 
 .eventimage{
-  width: 200px;
-  height: 200px;
+  width: 600px;
+  height: 400px;
 }
 
+.card-title{
+  color: rgb(64, 160, 198);
+  text-decoration: none;
+}
+
+.rsvp{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.rsvp> button{
+  padding: 2%;
+  width: 50%;
+  color: rgb(64, 160, 198);
+  background-color: white;  
+  border-color: rgb(109, 192, 224); 
+  border-width: thin;
+}
 @media only screen and (max-width: 600px) {
+  form *{
+    width: 300px;
+  }
+  
+  .loginform, .signupform{
+    width: 350px;
+    margin-top: 20%;
+    margin-left: 3%;
+  }
+
+  .createevent{
+    width: 350px;
+    margin-top: 15%;
+    margin-left: 1%;
+  }
+  
   .info{
     margin-top: 30%;
   }
@@ -131,4 +184,12 @@ h1{
     padding-top: 35%;
   }
   
+  .eventimage{
+    width: 200px;
+    height: 200px;
+  }
+
+  .nav{ 
+    font-size: 1rem;
+  }
 }

@@ -4,8 +4,8 @@
 <div class="jumbotron">
   <div class = "details">
     <h1>{{ post.title }}</h1>
+    <p><img class="eventimage" src="{{post.image_url}}" onerror="this.onerror=null; this.src='../static/images/charity.jpeg' "alt="Card image cap"></p>
     <h2>Organized by: {{post.organizer.username}}</h2>
-    <p><img class="card-img-top" src="{{post.image_url}}" onerror="this.onerror=null; this.src='../static/images/charity.jpeg' "alt="Card image cap"></p>
     <h3>Location: {{post.location}}</h3>
     <h3>Event Date: {{post.eventdate}}</h3>
 

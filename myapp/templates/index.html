@@ -1,22 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
     <div class="jumbotron">
-        <h1 class="event">Event</h1>
+        <h2 class="event">Event</h2>
     </div>
     <div class="container">
         <div class="card-group">
             <div class="row row-cols-1 row-cols-md-3">
         {% for post in event_posts.items %}
                 <div class="card" style="width: 25rem;">
-                    
                     <img class="card-img-top" src="{{post.image_url}}" onerror="this.onerror=null; this.src='../static/images/charity.jpeg' "alt="Card image cap">
                     <div class="card-body">
-                        <h2>
+                        <h2 class = "eventname">
                             <a class="card-title" href="{{url_for('event_posts.event_post', event_post_id=post.id)}}">{{post.title}}</a>
                         </h2>
-                        <p class="card-text">Created by: {{post.organizer.username}}</a><br>
-                        <!-- <p>Published on: {{post.date.strftime('%Y - %m - %d')}}</p> -->
-                        <!-- <a class="btn btn-primary" href="{{url_for('event_posts.event_post', event_post_id=post.id)}}">Details</a> -->
+                        <p class="card-title">Location: {{post.location}}</p>
+                    </div>
+                    <div class = "rsvp">
+                        <button>RSVP</button><br>
+                        <button>Interested</button><br>
                     </div>
                 </div>
             {% endfor %}

@@ -18,12 +18,12 @@
         {% if current_user.is_authenticated %}
         <li class="nav-link">
             <a class="nav-item" href="{{url_for('event_posts.create_post')}}">Create Event</a> 
-        </li>        
+        </li>  
+        <li class="nav-link">
+            <a class="nav-item" href="{{url_for('users.account')}}">Profile</a>      
         <li class="nav-link">
             <a class="nav-item" href="{{url_for('users.logout')}}">Log Out</a>
         </li>
-        <li class="nav-link">
-            <a class="nav-item" href="{{url_for('users.account')}}">Account</a>
         </li>
         {% else %}
         <li class="nav-link">
