@@ -154,19 +154,20 @@ h2{
 }
 @media only screen and (max-width: 600px) {
   form *{
-    width: 300px;
+    width: 250px;
   }
   
   .loginform, .signupform{
-    width: 350px;
-    margin-top: 20%;
-    margin-left: 3%;
+    width: 98%;
+    margin-top: 10%;
+    margin-left: 1%;
   }
 
   .createevent{
-    width: 350px;
-    margin-top: 15%;
+    width: 98%;
+    margin-top: 5%;
     margin-left: 1%;
+    padding-top: 0;
   }
   
   .info{
@@ -192,5 +193,8 @@ h2{
 
   .nav{ 
     font-size: 1rem;
+    padding: 10px 0;
+    
+    justify-content: space-between;
   }
 }
