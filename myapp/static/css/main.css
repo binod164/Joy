@@ -151,6 +151,11 @@ a{
   border-color: rgb(109, 192, 224); 
   border-width: thin;
 }
+
+.updatedelete > form *, .updatedelete >.btn{
+  width: 20%;
+}
+
 @media only screen and (max-width: 600px) {
   form *{
     width: 250px;
