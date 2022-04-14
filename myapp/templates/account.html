@@ -5,22 +5,29 @@
     </div>
     <div class="container">
         <div class="card-group">
-            <div class="row row-cols-1 row-cols-md-3">
-        {% for post in event_posts.items %}
-            {% if current_user.id == post.user_id %}
-                <div class="card" style="width: 25rem;">
-                    <img class="card-img-top" src="{{post.image_url}}" onerror="this.onerror=null; this.src='../static/images/charity.jpeg' "alt="Card image cap">
-                    <div class="card-body">
-                        <h2 class = "eventname">
-                            <a class="card-title" href="{{url_for('event_posts.event_post', event_post_id=post.id)}}">{{post.title}}</a>
-                        </h2>
-                        <p class="card-title">Location: {{post.location}}</p>
+            <div class="row col-sm col-sm col-sm">
+            {% for post in event_posts.items %}
+                {% if current_user.id == post.user_id %}
+                    <div class="card" style="width: 25rem;">
+                        <img class="card-img-top" src="{{post.image_url}}" onerror="this.onerror=null; this.src='../static/images/charity.jpeg' "alt="Card image cap">
+                        <div class="card-body">
+                            <h2 class = "eventname">
+                                <a class="card-title" href="{{url_for('event_posts.event_post', event_post_id=post.id)}}">{{post.title}}</a>
+                            </h2>
+                            <p class="card-title">Location: {{post.location}}</p>
+                        </div>
+                        <div class = "rsvp">
+                            <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample{{post.id}}" aria-expanded="false" aria-controls="collapseExample">
+                                    RSVP
+                            </button>
+                            <a class="btn" href="{{url_for('event_posts.event_post', event_post_id=post.id)}}">Details</a>
+                        </div>
+                        <div class="card-body collapse" id="collapseExample{{post.id}}">
+                            <div class="card card-body">
+                                🛠 Work in progress
+                            </div>
+                        </div>
                     </div>
-                    <div class = "rsvp">
-                        <button>RSVP</button><br>
-                        <button>Review</button><br>
-                    </div>
-                </div>
                 {% endif %}
             {% endfor %}
         </div>

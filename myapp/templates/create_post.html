@@ -4,24 +4,24 @@
     <div class="container">
       <form class="form-group" method="POST">
           {{form.hidden_tag()}}
-          <h1 class = "create-event">Create an event</h1>
+          <h1 class = "create-event">Event</h1>
           <div class="form-group">
-              {{form.title(class="form-control form-control-lg", placeholder = "Event Title")}}
+              {{form.title(class="form-control form-control-lg", placeholder = "Event Title", required ='required')}}
           </div>
           <div class="form-group">
-            {{form.image_url(class="form-control form-control-lg", placeholder = "Image Url")}}
+            {{form.image_url(class="form-control form-control-lg", placeholder = "Image Url", required ='required')}}
           </div>
           <div class="form-group">
-            {{form.text(class="form-control form-control-lg", placeholder = "Event Details")}}
+            {{form.text(class="form-control form-control-lg", placeholder = "Event Details", required ='required')}}
           </div>
           <div class="form-group">
-            {{form.location(class="form-control form-control-lg", placeholder = "Location")}}
+            {{form.location(class="form-control form-control-lg", placeholder = "Location", required ='required')}}
           </div>
           <div class="form-group">
-            {{form.eventdate(class="form-control form-control-lg", type="date" , placeholder = "Event Date")}}
+            {{form.eventdate(class="form-control form-control-lg", type="date" , placeholder = "Event Date", required ='required')}}
           </div>
           <div class="form-group">
-            {{form.submit(class="btn btn-outline-info")}}
+            {{form.submit(class="form-control form-control-lg")}}
           </div>
       </form>
     </div>
