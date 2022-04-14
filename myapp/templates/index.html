@@ -16,8 +16,17 @@
                         <p class="card-title">Location: {{post.location}}</p>
                     </div>
                     <div class = "rsvp">
-                        <button>RSVP</button><br>
-                        <button>Review</button><br>
+                        <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample{{post.id}}" aria-expanded="false" aria-controls="collapseExample">
+                                RSVP
+                        </button>
+                        <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample{{post.id}}" aria-expanded="false" aria-controls="collapseExample">
+                                Review
+                        </button>
+                    </div>
+                    <div class="card-body collapse" id="collapseExample{{post.id}}">
+                        <div class="card card-body">
+                            🛠 Work in progress
+                        </div>
                     </div>
                 </div>
             {% endfor %}
