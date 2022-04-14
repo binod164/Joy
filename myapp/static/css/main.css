@@ -1,14 +1,15 @@
 html,body{
-  height: 100%;
+  height: 100vh;
+  font-family:'Times New Roman', Times, serif 
 }
 
 body{
   /* background-color: rgb(248, 244, 244); */
   background-color: #eec0c6;
-background-image: linear-gradient(315deg, #eec0c6 0%, #7ee8fa 74%);
-
+  background-image: linear-gradient(315deg, #eec0c6 0%, #7ee8fa 74%);
   background-position: center;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 form{
@@ -44,11 +45,6 @@ form *{
   padding: 5px;
 }
 
-h1{
-  text-align: center;
-  margin-top: 2%;
-}
-
 h2{
   color: white;
   text-align: center;
@@ -68,7 +64,7 @@ h2{
   color: white;
 }
 
-.loginform, .signupform{
+.loginform{
   border-style: solid;
   border-radius: 20px;
   color: black;
@@ -79,13 +75,13 @@ h2{
   text-align: center;
 }
 
-.createevent{
+.createevent, .signupform{
   border-style: solid;
   border-radius: 20px;
   color: black;
   padding: 50px;
   width: 600px;
-  margin-top: 5%;
+  margin-top: 10%;
   margin-left: 25%;
   text-align: center;
 }
@@ -101,9 +97,11 @@ h2{
   justify-content: space-between;
 } */
 
-/* #submit{
-  background-color: rgb(76, 154, 245);  
-} */
+a{
+  color:rgb(64, 160, 198); 
+  font-size: 1.5rem;
+  text-decoration: none;
+}
 
 .info{
   display: flex;
@@ -114,7 +112,8 @@ h2{
 }
 
 .info>h1{
-  font-size: 5rem;
+  font-size: 8rem;
+  font-family:'Times New Roman', Times, serif 
 }
 
 .info>h4{
@@ -159,13 +158,13 @@ h2{
   
   .loginform, .signupform{
     width: 98%;
-    margin-top: 10%;
+    margin-top: 12vmin;
     margin-left: 1%;
   }
 
   .createevent{
     width: 98%;
-    margin-top: 5%;
+    margin-top: 8vmin;
     margin-left: 1%;
     padding-top: 0;
   }
@@ -196,5 +195,13 @@ h2{
     padding: 10px 0;
     
     justify-content: space-between;
+  }
+
+  .nav-item{
+    font-size: 0.9rem;
+  }
+
+  a{
+    font-size: 1rem;
   }
 }
