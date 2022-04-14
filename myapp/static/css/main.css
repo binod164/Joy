@@ -148,10 +148,12 @@ a{
   border-width: thin;
 }
 
-.updatedelete > form *, .updatedelete >.btn{
+.updatedelete > form *, .updatedelete >.btn-info{
   width: 20%;
   background-color: rgb(109, 192, 224);  
   margin-top: 1%;
+  color: white;
+  font-size: 1.25rem;
 }
 
 @media only screen and (max-width: 600px) {
@@ -210,5 +212,10 @@ a{
 
   .create-event{
     margin-top: 3%;
+  }
+
+  .updatedelete > form *, .updatedelete >.btn-info{
+    width: 30%;
+    font-size: 1rem;
   }
 }
