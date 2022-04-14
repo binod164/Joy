@@ -11,12 +11,14 @@ Click [here](https://trello.com/b/UN8odcue/unit-4-project) to view the planning 
 # Screenshots
 
 <img src = "https://i.imgur.com/FaWspod.png">
-<img src = "https://i.imgur.com/9RwqWAS.png">
+<img src = "https://i.imgur.com/H8YApwh.png">
 
 
 # Technologies Used
 
   ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+  
+  ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)
 
   ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 
