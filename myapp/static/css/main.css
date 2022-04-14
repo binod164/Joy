@@ -164,7 +164,7 @@ a{
 
   .createevent{
     width: 98%;
-    margin-top: 8vmin;
+    margin-top: 6vmin;
     margin-left: 1%;
     padding-top: 0;
   }
@@ -198,10 +198,14 @@ a{
   }
 
   .nav-item{
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   a{
     font-size: 1rem;
+  }
+
+  .create-event{
+    margin-top: 3%;
   }
 }
