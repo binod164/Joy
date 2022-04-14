@@ -8,8 +8,5 @@ class EventForm(FlaskForm):
     image_url = StringField('Image_Url', validators=[DataRequired()])
     location = TextAreaField('Location', validators=[DataRequired()])
     eventdate = StringField('Eventdate', validators=[DataRequired()])
-    # image = StringField('Image', validators=[DataRequired()])
-    # attending = BooleanField('Attending', validators=[DataRequired()])
-    # favorite = BooleanField('Attending', validators=[DataRequired()])
-
+    
     submit = SubmitField('Post')

@@ -6,23 +6,18 @@
           {{form.hidden_tag()}}
           <h1 class = "create-event">Create an event</h1>
           <div class="form-group">
-              <!-- {{form.title.label(class="form-control-label")}} -->
               {{form.title(class="form-control form-control-lg", placeholder = "Event Title")}}
           </div>
           <div class="form-group">
-            <!-- {{form.image_url.label(class="form-control-label")}} -->
             {{form.image_url(class="form-control form-control-lg", placeholder = "Image Url")}}
           </div>
           <div class="form-group">
-            <!-- {{form.text.label(class="form-control-label")}} -->
             {{form.text(class="form-control form-control-lg", placeholder = "Event Details")}}
           </div>
           <div class="form-group">
-            <!-- {{form.location.label(class="form-control-label")}} -->
             {{form.location(class="form-control form-control-lg", placeholder = "Location")}}
           </div>
           <div class="form-group">
-            <!-- {{form.eventdate.label(class="form-control-label")}} -->
             {{form.eventdate(class="form-control form-control-lg", type="date" , placeholder = "Event Date")}}
           </div>
           <div class="form-group">
