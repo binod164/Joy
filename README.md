@@ -1,6 +1,6 @@
 # Joy
 
-Joy is a an app that provides user a platform to view different charity events and also lets the user create charity events of their own.
+Joy is a an app that provides user a platform to view different charity events, search events by location or title and also lets the user create charity events of their own.
 
 # Getting Started
 
@@ -11,7 +11,7 @@ Click [here](https://trello.com/b/UN8odcue/unit-4-project) to view the planning 
 # Screenshots
 
 <img src = "https://i.imgur.com/FaWspod.png">
-<img src = "https://i.imgur.com/H8YApwh.png">
+<img src = "https://i.imgur.com/lBSO28l.png">
 
 
 # Technologies Used

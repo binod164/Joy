@@ -156,6 +156,29 @@ a{
   font-size: 1.25rem;
 }
 
+.events{
+  text-align: center;
+  padding-left: 30%;
+}
+
+.search{
+  width: 100px;
+  background-color: rgb(109, 192, 224);  
+  color: white;
+  border-color: rgb(64, 160, 198);
+  border-radius: 3%;
+}
+
+.input-search{
+  width: 300px;
+  border-color: rgb(64, 160, 198);
+  border-radius: 3%;
+}
+
+.input-search::placeholder{
+  color: rgb(64, 160, 198);
+}
+
 @media only screen and (max-width: 600px) {
   form *{
     width: 250px;
@@ -218,4 +241,19 @@ a{
     width: 30%;
     font-size: 1rem;
   }
+
+  .search-event{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .search{
+    height: 30px;
+    padding-top: 2px;
+  }
+
+  .input-search{
+    height: 30px;
+  }
+
 }

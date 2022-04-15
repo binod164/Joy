@@ -1,7 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="jumbotron">
-        <h2 class="event">Event</h2>
+    <div class="jumbotron d-flex search-event">
+        <h2 class ="events col-8">Events</h2>
+        <form method = "GET">
+            <div class="d-flex">
+                <input class ="input-search form-control" type="search" placeholder="Search by Location or Title " name="term"> 
+                <button class ="btn search" type="submit">Search</button>  
+            </div>     
+        </form>
     </div>
     <div class="container">
         <div class="card-group">
