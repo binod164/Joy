@@ -11,7 +11,7 @@ Click [here](https://trello.com/b/UN8odcue/unit-4-project) to view the planning 
 # Screenshots
 
 <img src = "https://i.imgur.com/FaWspod.png">
-<img src = "https://i.imgur.com/lBSO28l.png">
+<img src = "https://i.imgur.com/fXHonlK.png">
 
 
 # Technologies Used
@@ -36,9 +36,9 @@ Click [here](https://trello.com/b/UN8odcue/unit-4-project) to view the planning 
 
 # Next Steps
 
-- [ ] Use location based API to sort the event by location
+- [ ] Use location based API to get direction to event location
 - [ ] Use event based API to get list of all charity events 
-- [ ] AAU, when viewing the details page for a event, I want to be able to rsvp   for the event.
-- [ ] AAU, I want to be able to write a review for the event.
+- [ ] When viewing the details page for an event, I want to be able to rsvp for the event.
+- [ ] I want to be able to write a review for the event and event organizer.
 
 
