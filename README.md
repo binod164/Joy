@@ -1,6 +1,6 @@
 # Joy
 
-Joy is a an app that provides user a platform to view different charity events, search events by location or title and also lets the user create charity events of their own.
+Joy is a an app that provides user a platform to view different non-profit events, search events by location or title and also lets the user create events of their own.
 
 # Getting Started
 
@@ -37,7 +37,7 @@ Click [here](https://trello.com/b/UN8odcue/unit-4-project) to view the planning 
 # Next Steps
 
 - [ ] Use location based API to get direction to event location
-- [ ] Use event based API to get list of all charity events 
+- [ ] Use event based API to get list of all non-profit events 
 - [ ] When viewing the details page for an event, I want to be able to rsvp for the event.
 - [ ] I want to be able to write a review for the event and event organizer.
 
